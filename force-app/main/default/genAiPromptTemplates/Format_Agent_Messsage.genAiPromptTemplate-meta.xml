@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionIdentifier>oUlUFPkqm2OF6kmjPi/O9g76H54BLayWkPPMg32xtr4=_1</activeVersionIdentifier>
+    <description>Utility prompt designed to parse and reformat raw JSON outputs from Agentforce Service Agents. It extracts the core &apos;value&apos; content, strips out system metadata (IDs and security flags), and converts technical strings into a structured, human-readable form</description>
+    <developerName>Format_Agent_Messsage</developerName>
+    <masterLabel>Format Agent Messsage</masterLabel>
+    <overridable>false</overridable>
+    <templateVersions>
+        <content>### Task
+Transform the following raw JSON data into a clean, human-readable, and well-formatted text report.
+
+### Input Data (Raw JSON):
+{!$Input:Input_Raw_JSON_Data}
+
+### Universal Processing Rules:
+1. **Identify Core Content:** Scan the JSON structure and extract the primary text values. Prioritize information that looks like a message, description, result, or list of steps.
+2. **Strip Metadata:** Remove all JSON syntax (braces {}, brackets [], quotes &quot;&quot;), and ignore technical system keys (such as IDs, status codes, boolean flags, or timestamps).
+3. **Handle Escape Characters:** Convert all technical line breaks (e.g., \n, \r\n) into actual, clean paragraph breaks.
+4. **Professional Formatting:**
+  - Create a **Title** at the top based on the apparent topic of the data.
+  - Use **Bullet Points** or **Numbered Lists** if the data contains sequences or multiple items.
+  - Use **Bold text** for emphasis on key terms, status, or specific actions.
+5. **Fallback:** If the JSON is empty or contains no readable text, return: &quot;No valid information could be extracted from the system message.&quot;
+
+### Cleaned and Formatted Output:
+</content>
+        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
+        <inputs>
+            <apiName>Input_Raw_JSON_Data</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Input.Raw_JSON_Data</masterLabel>
+            <referenceName>Input:Input_Raw_JSON_Data</referenceName>
+            <required>true</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultGPT5Mini</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>oUlUFPkqm2OF6kmjPi/O9g76H54BLayWkPPMg32xtr4=_1</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

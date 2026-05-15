@@ -1,0 +1,104 @@
+<template>
+    <lightning-tabset variant="scoped">
+        <lightning-tab label="Create Service Request">
+            <lightning-card title="New Service Request (AI Guided)" icon-name="standard:service_request">
+                <div class="slds-p-around_medium">
+                    <lightning-input label="Customer Email" type="email" value={email} onchange={handleEmail} class="slds-m-bottom_small" required></lightning-input>
+
+                    <lightning-textarea
+                        label="Issue Description"
+                        value={description}
+                        onchange={handleDescription}
+                        onblur={handleDescriptionBlur} 
+                        placeholder="Describe the technical problem here..."
+                        required>
+                    </lightning-textarea>
+
+                    <template if:true={isAiLoading}>
+                        <div class="slds-m-vertical_small slds-grid slds-grid_vertical-align-center">
+                            <div style="position:relative; width:2rem; height:1.5rem;">
+                                <lightning-spinner size="small" variant="brand"></lightning-spinner>
+                            </div>
+                            <span class="slds-m-left_small slds-text-color_weak slds-text-body_small">Consulting Acme technical support...</span>
+                        </div>
+                    </template>
+                    <div class="slds-form-element slds-m-top_small">
+                        <label class="slds-form-element__label" for="res-notes">
+                            Resolution Notes (AI Suggested)
+                        </label>
+                        <div class="slds-form-element__control">
+                            <textarea 
+                                id="res-notes"
+                                rows="20" 
+                                class="slds-textarea" 
+                                placeholder="The Agent will generate resolution notes based on the request analysis"
+                                onchange={handleResolutionNotes}>
+                                {resolutionNotes}
+                            </textarea>
+                        </div>
+                    </div>                 
+
+                    <lightning-combobox label="Priority" value={priority} options={priorityOptions} onchange={handlePriority} class="slds-m-top_small"></lightning-combobox>
+
+                    <lightning-button label="Create Request" variant="brand" onclick={handleSubmit} disabled={isLoading} class="slds-m-top_medium" icon-name="utility:add"></lightning-button>
+
+                    <template if:true={recordId}>
+                        <p class="slds-m-top_small slds-text-color_success"><b>Success!</b> Record created with ID:: {recordId}</p>
+                    </template>
+                    <template if:true={error}>
+                        <div class="slds-box slds-theme_error slds-m-top_small">
+                            <p>{error}</p>
+                        </div>
+                    </template>
+                </div>
+            </lightning-card>
+        </lightning-tab>
+
+        <lightning-tab label="Recent Requests">
+            <div class="slds-p-around_medium">
+                <lightning-datatable 
+                    key-field="id" 
+                    data={recentRequests} 
+                    columns={columns} 
+                    onrowaction={handleRowAction} 
+                    hide-checkbox-column>
+                </lightning-datatable>
+            </div>
+        </lightning-tab>
+    </lightning-tabset>
+
+    <template if:true={isModalOpen}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal_small">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close" variant="inverse" size="small"></lightning-icon>
+                    </button>
+                    <h2 class="slds-text-heading_medium">Edit Service Request</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium">
+                    <lightning-record-edit-form object-api-name="Service_Request__c" record-id={selectedRecord.id} onsuccess={handleEditSuccess}>
+                        <div class="slds-grid slds-wrap">
+                            <div class="slds-col slds-size_1-of-1">
+                                <lightning-input-field field-name="Customer_Email__c"></lightning-input-field>
+                            </div>
+                            <div class="slds-col slds-size_1-of-1">
+                                <lightning-input-field field-name="Description__c"></lightning-input-field>
+                            </div>
+                            <div class="slds-col slds-size_1-of-1">
+                                <lightning-input-field field-name="Resolution_Notes__c"></lightning-input-field>
+                            </div>
+                        </div>
+                        <div class="slds-m-top_medium slds-align_absolute-center">
+                            <lightning-button variant="brand" type="submit" label="Save Changes"></lightning-button>
+                        </div>
+                    </lightning-record-edit-form>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning-button label="Cancel" onclick={closeModal}></lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

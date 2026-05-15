@@ -1,0 +1,32 @@
+{
+  "required" : [ "caseRecord", "caseStatus" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "caseRecord" : {
+      "title" : "Case record",
+      "description" : "Stores the case record of the case to close.",
+      "lightning:type" : "lightning__recordInfoType",
+      "lightning:sObjectInfo" : {
+        "apiName" : "Case"
+      },
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "caseStatus" : {
+      "title" : "Case Status",
+      "description" : "Stores the case status picklist value provided by the user.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "caseReason" : {
+      "title" : "Case Reason",
+      "description" : "Stores the case reason picklist value provided by the user.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    }
+  },
+  "lightning:type" : "lightning__objectType",
+  "lightning:textIndexed" : true
+}

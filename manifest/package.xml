@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+
+	<types>
+		<members>ServiceRequestController</members>
+		<members>ServiceRequestControllerTest</members>
+		<members>ServiceRequestDTO</members>
+		<members>ServiceRequestService</members>
+		<members>ServiceRequestServiceTest</members>
+		<name>ApexClass</name>
+	</types>
+	<types>
+		<members>Service_Request__c</members>
+		<name>CustomObject</name>
+	</types>
+	<types>
+		<members>Acme_App_UtilityBar</members>
+		<members>Service_Request_Console</members>
+		<name>FlexiPage</name>
+	</types>
+	<types>
+		<members>*</members>
+		<name>Flow</name>
+	</types>
+	<types>
+		<members>*</members>
+		<name>FlowDefinition</name>
+	</types>
+	<types>
+		<members>Technical_Support_Agent</members>
+		<name>GenAiPlannerBundle</name>
+	</types>
+	<types>
+		<members>Format_Agent_Messsage</members>
+		<members>answerWithKnowledge_Override</members>
+		<name>GenAiPromptTemplate</name>
+	</types>
+	<types>
+		<members>Service_Request__c-Service Request Layout</members>
+		<name>Layout</name>
+	</types>
+	<types>
+		<members>serviceRequestForm</members>
+		<name>LightningComponentBundle</name>
+	</types>
+	<types>
+		<members>Service_Request__c.All</members>
+		<name>ListView</name>
+	</types>
+	<version>66.0</version>
+</Package>

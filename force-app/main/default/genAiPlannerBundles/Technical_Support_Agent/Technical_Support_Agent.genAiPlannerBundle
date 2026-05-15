@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlannerBundle xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <description>You are an AI Agent whose job is to help diagnose hardware issues, provide troubleshooting steps, document resolution notes, and manage service requests for Acme Services.</description>
+    <localActionLinks>
+        <genAiFunctionName>AnswerQuestionsWithKnowledge_16jNS000003TOmn</genAiFunctionName>
+    </localActionLinks>
+    <localTopicLinks>
+        <genAiPluginName>p_16jNS000003TOmn_Hardware_Issue_Diagnosis_16jNS000003TOmn</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>p_16jNS000003TOmn_Issue_Lifecycle_Monitoring_16jNS000003TOmn</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>p_16jNS000003TOmn_Resolution_Notes_Creation_16jNS000003TOmn</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>p_16jNS000003TOmn_Service_Request_Management_16jNS000003TOmn</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>p_16jNS000003TOmn_Troubleshooting_Steps_16jNS000003TOmn</genAiPluginName>
+    </localTopicLinks>
+    <localTopics>
+        <fullName>p_16jNS000003TOmn_Resolution_Notes_Creation_16jNS000003TOmn</fullName>
+        <canEscalate>false</canEscalate>
+        <description>This topic is used when there is a need to document the resolution steps taken for hardware issues for future reference.</description>
+        <developerName>p_16jNS000003TOmn_Resolution_Notes_Creation_16jNS000003TOmn</developerName>
+        <genAiPluginInstructions>
+            <description>If a resolution has been reached, document the steps taken in detail.</description>
+            <developerName>instruction_0</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>instruction_0</masterLabel>
+            <sortOrder>0</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Ensure the notes are clear and organized for future reference.</description>
+            <developerName>instruction_1</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>instruction_1</masterLabel>
+            <sortOrder>0</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localActionLinks>
+            <functionName>AnswerQuestionsWithKnowledge_179NS000004pNt9</functionName>
+        </localActionLinks>
+        <localActions>
+            <fullName>AnswerQuestionsWithKnowledge_179NS000004pNt9</fullName>
+            <description>Answers questions about company policies and procedures, troubleshooting steps, or product information. For example: “What is your return policy?” “How do I fix an issue?” or “What features does a product have?”</description>
+            <developerName>AnswerQuestionsWithKnowledge_179NS000004pNt9</developerName>
+            <invocationTarget>streamKnowledgeSearch</invocationTarget>
+            <invocationTargetType>standardInvocableAction</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+            <localDeveloperName>AnswerQuestionsWithKnowledge</localDeveloperName>
+            <masterLabel>Answer Questions with Knowledge</masterLabel>
+            <progressIndicatorMessage>Getting answers</progressIndicatorMessage>
+            <source>EmployeeCopilot__AnswerQuestionsWithKnowledge</source>
+        </localActions>
+        <localDeveloperName>p_16jNS000003TOmn_Resolution_Notes_Creation</localDeveloperName>
+        <masterLabel>Resolution Notes Creation</masterLabel>
+        <pluginType>Topic</pluginType>
+        <scope>Your job is to only document detailed resolution notes for resolved hardware issues. You aren&apos;t able to create service requests or address unresolved issues.</scope>
+    </localTopics>
+    <localTopics>
+        <fullName>p_16jNS000003TOmn_Troubleshooting_Steps_16jNS000003TOmn</fullName>
+        <canEscalate>false</canEscalate>
+        <description>This topic is chosen when customers request specific step-by-step instructions to resolve hardware problems.</description>
+        <developerName>p_16jNS000003TOmn_Troubleshooting_Steps_16jNS000003TOmn</developerName>
+        <genAiPluginInstructions>
+            <description>If the query is about resolving a hardware issue, provide step-by-step troubleshooting instructions.</description>
+            <developerName>instruction_0</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>instruction_0</masterLabel>
+            <sortOrder>0</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Ensure the steps are clear and actionable before sharing.</description>
+            <developerName>instruction_1</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>instruction_1</masterLabel>
+            <sortOrder>0</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localActionLinks>
+            <functionName>AnswerQuestionsWithKnowledge_179NS000004pNt8</functionName>
+        </localActionLinks>
+        <localActions>
+            <fullName>AnswerQuestionsWithKnowledge_179NS000004pNt8</fullName>
+            <description>Answers questions about company policies and procedures, troubleshooting steps, or product information. For example: “What is your return policy?” “How do I fix an issue?” or “What features does a product have?”</description>
+            <developerName>AnswerQuestionsWithKnowledge_179NS000004pNt8</developerName>
+            <invocationTarget>streamKnowledgeSearch</invocationTarget>
+            <invocationTargetType>standardInvocableAction</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+            <localDeveloperName>AnswerQuestionsWithKnowledge</localDeveloperName>
+            <masterLabel>Answer Questions with Knowledge</masterLabel>
+            <progressIndicatorMessage>Getting answers</progressIndicatorMessage>
+            <source>EmployeeCopilot__AnswerQuestionsWithKnowledge</source>
+        </localActions>
+        <localDeveloperName>p_16jNS000003TOmn_Troubleshooting_Steps</localDeveloperName>
+        <masterLabel>Troubleshooting Steps</masterLabel>
+        <pluginType>Topic</pluginType>
+        <scope>Your job is to only provide detailed troubleshooting steps for resolving hardware issues. You cannot diagnose new issues or handle unrelated queries.</scope>
+    </localTopics>
+    <localTopics>
+        <fullName>p_16jNS000003TOmn_Hardware_Issue_Diagnosis_16jNS000003TOmn</fullName>
+        <canEscalate>false</canEscalate>
+        <description>This topic is selected when a customer reports hardware malfunctions or seeks assistance in identifying the root cause of hardware issues.</description>
+        <developerName>p_16jNS000003TOmn_Hardware_Issue_Diagnosis_16jNS000003TOmn</developerName>
+        <genAiPluginInstructions>
+            <description>If the query is about identifying a hardware issue, use internal diagnostic guides.</description>
+            <developerName>instruction_0</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>instruction_0</masterLabel>
+            <sortOrder>0</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>If the hardware issue requires further analysis, document findings for future reference.</description>
+            <developerName>instruction_1</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>instruction_1</masterLabel>
+            <sortOrder>0</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localActionLinks>
+            <functionName>AnswerQuestionsWithKnowledge_179NS000004pNt7</functionName>
+        </localActionLinks>
+        <localActions>
+            <fullName>AnswerQuestionsWithKnowledge_179NS000004pNt7</fullName>
+            <description>Answers questions about company policies and procedures, troubleshooting steps, or product information. For example: “What is your return policy?” “How do I fix an issue?” or “What features does a product have?”</description>
+            <developerName>AnswerQuestionsWithKnowledge_179NS000004pNt7</developerName>
+            <invocationTarget>streamKnowledgeSearch</invocationTarget>
+            <invocationTargetType>standardInvocableAction</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+            <localDeveloperName>AnswerQuestionsWithKnowledge</localDeveloperName>
+            <masterLabel>Answer Questions with Knowledge</masterLabel>
+            <progressIndicatorMessage>Getting answers</progressIndicatorMessage>
+            <source>EmployeeCopilot__AnswerQuestionsWithKnowledge</source>
+        </localActions>
+        <localDeveloperName>p_16jNS000003TOmn_Hardware_Issue_Diagnosis</localDeveloperName>
+        <masterLabel>Hardware Issue Diagnosis</masterLabel>
+        <pluginType>Topic</pluginType>
+        <scope>Your job is to only analyze and identify hardware malfunctions using internal guides. You aren&apos;t able to resolve software-related issues or escalate cases.</scope>
+    </localTopics>
+    <localTopics>
+        <fullName>p_16jNS000003TOmn_Issue_Lifecycle_Monitoring_16jNS000003TOmn</fullName>
+        <canEscalate>false</canEscalate>
+        <description>This topic is selected when there is a need to track and manage the progress of hardware issue resolutions.</description>
+        <developerName>p_16jNS000003TOmn_Issue_Lifecycle_Monitoring_16jNS000003TOmn</developerName>
+        <genAiPluginInstructions>
+            <description>If the query is about the status of an issue, retrieve the relevant service request and provide an update.</description>
+            <developerName>instruction_0</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>instruction_0</masterLabel>
+            <sortOrder>0</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Ensure all updates to the lifecycle are recorded systematically.</description>
+            <developerName>instruction_1</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>instruction_1</masterLabel>
+            <sortOrder>0</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localActionLinks>
+            <functionName>GetCaseByCaseNumber_179NS000004pNtB</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>CloseCase_179NS000004pNtB</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>AnswerQuestionsWithKnowledge_179NS000004pNtB</functionName>
+        </localActionLinks>
+        <localActions>
+            <fullName>AnswerQuestionsWithKnowledge_179NS000004pNtB</fullName>
+            <description>Answers questions about company policies and procedures, troubleshooting steps, or product information. For example: “What is your return policy?” “How do I fix an issue?” or “What features does a product have?”</description>
+            <developerName>AnswerQuestionsWithKnowledge_179NS000004pNtB</developerName>
+            <invocationTarget>streamKnowledgeSearch</invocationTarget>
+            <invocationTargetType>standardInvocableAction</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+            <localDeveloperName>AnswerQuestionsWithKnowledge</localDeveloperName>
+            <masterLabel>Answer Questions with Knowledge</masterLabel>
+            <progressIndicatorMessage>Getting answers</progressIndicatorMessage>
+            <source>EmployeeCopilot__AnswerQuestionsWithKnowledge</source>
+        </localActions>
+        <localActions>
+            <fullName>CloseCase_179NS000004pNtB</fullName>
+            <description>From the case ID or the Close Case quick action, sets the case status to Closed as long as the previous status was set to Resolved, Waiting for Customer Confirmation, or a custom status.</description>
+            <developerName>CloseCase_179NS000004pNtB</developerName>
+            <invocationTarget>SvcCopilotTmpl__CloseCase</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+            <localDeveloperName>CloseCase</localDeveloperName>
+            <masterLabel>Close Case</masterLabel>
+            <source>SvcCopilotTmpl__CloseCase</source>
+        </localActions>
+        <localActions>
+            <fullName>GetCaseByCaseNumber_179NS000004pNtB</fullName>
+            <description>Returns a case associated with a given contact record and case number.</description>
+            <developerName>GetCaseByCaseNumber_179NS000004pNtB</developerName>
+            <invocationTarget>SvcCopilotTmpl__GetCaseByCaseNumber</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+            <localDeveloperName>GetCaseByCaseNumber</localDeveloperName>
+            <masterLabel>Get Case By Case Number</masterLabel>
+            <source>SvcCopilotTmpl__GetCaseByCaseNumber</source>
+        </localActions>
+        <localDeveloperName>p_16jNS000003TOmn_Issue_Lifecycle_Monitoring</localDeveloperName>
+        <masterLabel>Issue Lifecycle Monitoring</masterLabel>
+        <pluginType>Topic</pluginType>
+        <scope>Your job is to only monitor and manage the lifecycle of hardware issue resolutions, including tracking progress and updating statuses. You aren&apos;t able to resolve issues or create new cases.</scope>
+    </localTopics>
+    <localTopics>
+        <fullName>p_16jNS000003TOmn_Service_Request_Management_16jNS000003TOmn</fullName>
+        <canEscalate>false</canEscalate>
+        <description>This topic applies when customers need to create or update service request records for hardware issues.</description>
+        <developerName>p_16jNS000003TOmn_Service_Request_Management_16jNS000003TOmn</developerName>
+        <genAiPluginInstructions>
+            <description>If the customer requests to create a service request, collect all necessary details and create the record.</description>
+            <developerName>instruction_0</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>instruction_0</masterLabel>
+            <sortOrder>0</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>If the customer wants to update an existing service request, retrieve the record and make the necessary updates.</description>
+            <developerName>instruction_1</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>instruction_1</masterLabel>
+            <sortOrder>0</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localActionLinks>
+            <functionName>CreateCase_179NS000004pNtA</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>GetCaseByCaseNumber_179NS000004pNtA</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>AnswerQuestionsWithKnowledge_179NS000004pNtA</functionName>
+        </localActionLinks>
+        <localActions>
+            <fullName>AnswerQuestionsWithKnowledge_179NS000004pNtA</fullName>
+            <description>Answers questions about company policies and procedures, troubleshooting steps, or product information. For example: “What is your return policy?” “How do I fix an issue?” or “What features does a product have?”</description>
+            <developerName>AnswerQuestionsWithKnowledge_179NS000004pNtA</developerName>
+            <invocationTarget>streamKnowledgeSearch</invocationTarget>
+            <invocationTargetType>standardInvocableAction</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+            <localDeveloperName>AnswerQuestionsWithKnowledge</localDeveloperName>
+            <masterLabel>Answer Questions with Knowledge</masterLabel>
+            <progressIndicatorMessage>Getting answers</progressIndicatorMessage>
+            <source>EmployeeCopilot__AnswerQuestionsWithKnowledge</source>
+        </localActions>
+        <localActions>
+            <fullName>GetCaseByCaseNumber_179NS000004pNtA</fullName>
+            <description>Returns a case associated with a given contact record and case number.</description>
+            <developerName>GetCaseByCaseNumber_179NS000004pNtA</developerName>
+            <invocationTarget>SvcCopilotTmpl__GetCaseByCaseNumber</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+            <localDeveloperName>GetCaseByCaseNumber</localDeveloperName>
+            <masterLabel>Get Case By Case Number</masterLabel>
+            <source>SvcCopilotTmpl__GetCaseByCaseNumber</source>
+        </localActions>
+        <localActions>
+            <fullName>CreateCase_179NS000004pNtA</fullName>
+            <description>Let a customer create a case.</description>
+            <developerName>CreateCase_179NS000004pNtA</developerName>
+            <invocationTarget>SvcCopilotTmpl__CreateCase</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>true</isConfirmationRequired>
+            <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+            <localDeveloperName>CreateCase</localDeveloperName>
+            <masterLabel>Create Case</masterLabel>
+            <source>SvcCopilotTmpl__CreateCase</source>
+        </localActions>
+        <localDeveloperName>p_16jNS000003TOmn_Service_Request_Management</localDeveloperName>
+        <masterLabel>Service Request Management</masterLabel>
+        <pluginType>Topic</pluginType>
+        <scope>Your job is to only create and update service request records systematically. You aren&apos;t able to resolve the issues directly or handle unrelated tasks.</scope>
+    </localTopics>
+    <masterLabel>Technical Support Agent</masterLabel>
+    <plannerActions>
+        <fullName>AnswerQuestionsWithKnowledge_16jNS000003TOmn</fullName>
+        <description>Answers questions about company policies and procedures, troubleshooting steps, or product information. For example: “What is your return policy?” “How do I fix an issue?” or “What features does a product have?”</description>
+        <developerName>AnswerQuestionsWithKnowledge_16jNS000003TOmn</developerName>
+        <invocationTarget>streamKnowledgeSearch</invocationTarget>
+        <invocationTargetType>standardInvocableAction</invocationTargetType>
+        <isConfirmationRequired>false</isConfirmationRequired>
+        <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+        <localDeveloperName>AnswerQuestionsWithKnowledge</localDeveloperName>
+        <masterLabel>Answer Questions with Knowledge</masterLabel>
+        <progressIndicatorMessage>Getting answers</progressIndicatorMessage>
+        <source>EmployeeCopilot__AnswerQuestionsWithKnowledge</source>
+    </plannerActions>
+    <plannerSurfaces>
+        <adaptiveResponseAllowed>true</adaptiveResponseAllowed>
+        <callRecordingAllowed>false</callRecordingAllowed>
+        <surface>SurfaceAction__Messaging</surface>
+        <surfaceType>Messaging</surfaceType>
+    </plannerSurfaces>
+    <plannerSurfaces>
+        <adaptiveResponseAllowed>true</adaptiveResponseAllowed>
+        <callRecordingAllowed>false</callRecordingAllowed>
+        <surface>SurfaceAction__CustomerWebClient</surface>
+        <surfaceType>CustomerWebClient</surfaceType>
+    </plannerSurfaces>
+    <plannerType>AiCopilot__ReAct</plannerType>
+</GenAiPlannerBundle>
